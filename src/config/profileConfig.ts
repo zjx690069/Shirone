@@ -25,7 +25,12 @@ export const profileConfig: ProfileConfig = withUserConfig("profile", {
 		{
 			name: "GitHub",
 			icon: "fa7-brands:github",
-			url: "https://github.com/LyraVoid/Shirone",
+			url: "https://github.com/zjx690069/Shirone",
 		},
+		{
+			name: "Bilibili",                     // 显示名称
+			icon: "fa6-brands:bilibili",          // iconify 图标编码
+			url: "https://b23.tv/e7uJ4Tj",  // 跳转地址
+		}
 	],
 });
