@@ -78,17 +78,16 @@ jobs:
 
       - name: Checkout theme
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-
+        with:
+          token: ${{ github.token }}
       - name: Checkout content
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           repository: ${{ env.CONTENT_REPOSITORY }}
           ref: ${{ steps.target.outputs.ref }}
           path: ${{ env.CONTENT_WORKING_COPY }}
-          # 内容仓公开时可以删掉 token 一行。
-          token: ${{ secrets.CONTENT_REPO_TOKEN }}
           persist-credentials: false
-
+          
       - name: Record content commit
         id: content
         run: |
