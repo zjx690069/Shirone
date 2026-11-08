@@ -92,6 +92,7 @@ jobs:
         id: content
         run: |
           set -euo pipefail
+          pnpm anime:sync --provider bilibili
           echo "sha=$(git -C '${{ env.CONTENT_WORKING_COPY }}' rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Set up pnpm
