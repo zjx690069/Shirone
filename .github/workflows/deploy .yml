@@ -132,7 +132,7 @@ jobs:
             ${{ runner.os }}-shirone-anime-
 
       - name: Sync anime data (best effort)
-        run: pnpm anime:sync --if-stale
+        run: pnpm anime:sync --provider bangumi
         env:
           BILI_SESSDATA: ${{ secrets.BILI_SESSDATA }}
 
