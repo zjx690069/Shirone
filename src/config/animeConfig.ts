@@ -46,7 +46,7 @@ export const animeConfig: AnimeConfig = withUserConfig("anime", {
 
 	/** 主数据源选择 */
 	source: {
-		kind: "local",
+		kind: "snapshot",
 		// provider: "bangumi",
 		// file: "bangumi.json",
 		// fetchOnDev: true,
@@ -60,8 +60,8 @@ export const animeConfig: AnimeConfig = withUserConfig("anime", {
 	/** 外部提供方配置 */
 	providers: {
 		bangumi: {
-			enable: false,
-			userId: "", // 填入你的 Bangumi 数字 UID 或公开用户名（测试可填 "sai"）
+			enable: true,
+			userId: "1298936", // 填入你的 Bangumi 数字 UID 或公开用户名（测试可填 "sai"）
 			request: {
 				pageSize: 50,
 				maxItems: 300,
@@ -69,7 +69,7 @@ export const animeConfig: AnimeConfig = withUserConfig("anime", {
 			},
 		},
 		bilibili: {
-			enable: true,
+			enable: false,
 			vmid: "3461574121491367", // 填入你的 B 站公开 UID
 			sessdataEnv: "BILI_SESSDATA",
 			cover: {
