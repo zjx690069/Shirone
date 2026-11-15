@@ -62,6 +62,10 @@ export const animeConfig: AnimeConfig = withUserConfig("anime", {
 		bangumi: {
 			enable: true,
 			userId: "1298936", // 填入你的 Bangumi 数字 UID 或公开用户名（测试可填 "sai"）
+			cover: {
+        mode: "local", // 封面策略：remote 远程直链（默认）| local 本地下载 | none
+        // mirror: "https://your-image-proxy.example.com", // remote 模式可选镜像前缀
+      },
 			request: {
 				pageSize: 50,
 				maxItems: 300,
