@@ -119,18 +119,18 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --prefer-offline
 
-      - name: Materialize content and config
-        run: pnpm content:sync
+      #- name: Materialize content and config
+        #run: pnpm content:sync
 
-      - name: Restore anime cache
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-        with:
-          path: |
-            src/data/anime-snapshots
-            public/assets/anime/covers
-          key: ${{ runner.os }}-shirone-anime-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-shirone-anime-
+      #- name: Restore anime cache
+      #  uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+      #  with:
+      #    path: |
+      #      src/data/anime-snapshots
+      #      public/assets/anime/covers
+       #   key: ${{ runner.os }}-shirone-anime-${{ hashFiles('pnpm-lock.yaml') }}
+      #    restore-keys: |
+      #      ${{ runner.os }}-shirone-anime-
 
       - name: Sync anime data (best effort)
         run: pnpm anime:sync --provider bangumi
