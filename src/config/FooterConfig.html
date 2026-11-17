@@ -1,0 +1,14 @@
+<div style="text-align:center;font-size:0.85em;opacity:0.75;">
+  本站已运行
+  <span id="site-days">…</span>
+  天
+</div>
+<script>
+  const start = new Date("2026-01-01").getTime()
+  const el = document.getElementById("site-days")
+  const update = () => {
+    el.textContent = Math.floor((Date.now() - start) / 86400000)
+  }
+  update()
+  setInterval(update, 3600000)
+</script>

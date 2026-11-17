@@ -80,8 +80,6 @@ artifacts/shirone-ai-*
 # content repository (materialized by `pnpm content:sync`)
 /src/content/
 /src/data/*.ts
-/src/user/user-config.ts
-/src/config/FooterConfig.html
 /src/assets/images/
 /public/images/
 /public/assets/banner/
