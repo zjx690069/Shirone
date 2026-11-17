@@ -84,6 +84,7 @@ jobs:
       - name: Checkout content
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
+          token: ${{ secrets.CONTENT_TOKEN }}
           repository: ${{ env.CONTENT_REPOSITORY }}
           ref: ${{ steps.target.outputs.ref }}
           path: ${{ env.CONTENT_WORKING_COPY }}
