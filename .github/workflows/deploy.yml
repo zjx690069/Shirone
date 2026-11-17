@@ -48,7 +48,7 @@ permissions:
   contents: read
 
 env:
-  CONTENT_REPOSITORY: zjx690069/Shirone
+  CONTENT_REPOSITORY: zjx690069/shirone-content
   CONTENT_WORKING_COPY: .content-src
 
 jobs:
@@ -77,12 +77,12 @@ jobs:
           echo "ref=$ref" >> "$GITHUB_OUTPUT"
 
       - name: Checkout theme
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af68e # v4.2.2
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           token: ${{ github.token }}
           persist-credentials: true
       - name: Checkout content
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af68e # v4.2.2
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           repository: ${{ env.CONTENT_REPOSITORY }}
           ref: ${{ steps.target.outputs.ref }}

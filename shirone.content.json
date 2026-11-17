@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "type": "git",
+    "url": "https://github.com/zjx690069/shirone-content.git",
+    "ref": "main"
+  }
+}
