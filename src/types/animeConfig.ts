@@ -76,6 +76,19 @@ export interface BangumiProviderConfig {
 	enable: boolean;
 	/** Bangumi 用户 ID 或公开个性域名（必填，未填时自动禁用） */
 	userId: string;
+	/**
+	 * 封面处理策略（默认 remote：lain.bgm.tv 无防盗链，直链可直接展示）。
+	 * 与 Bilibili 对齐，但不提供 useWebp——bgm.tv 图床无服务端格式转换参数。
+	 */
+	cover?: {
+		mode: AnimeCoverMode;
+		/**
+		 * 可选封面镜像前缀（remote 模式生效），拼接完整封面 URL：
+		 * 查询式图片代理（如 "https://wsrv.nl/?url="）原样拼接；
+		 * 路径式镜像（如 "https://proxy.example.com/"）会规范为单个 `/` 后再拼接。
+		 */
+		mirror?: string;
+	};
 	/** 可选网络请求参数 */
 	request?: AnimeRequestOptions;
 }
