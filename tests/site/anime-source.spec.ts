@@ -112,7 +112,7 @@ test.describe("Anime 数据源与配置解析契约", () => {
 		expect(item?.progress).toEqual({ watched: 15, total: 28 });
 		expect(item?.year).toBe("2023");
 		expect(item?.cover).toBe("https://example.com/cover.webp");
-		expect(item?.link).toBe("https://bgm.tv/subject/400000");
+		expect(item?.link).toBe("https://bangumi.lat/subject/400000");
 		expect(item?.description).toBe("Epic journey with magic. Enjoy!");
 		expect(item?.genres).toEqual(["Adventure", "Fantasy"]);
 		expect(item?.studio).toBe("Madhouse");

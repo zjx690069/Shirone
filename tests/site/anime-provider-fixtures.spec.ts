@@ -25,7 +25,7 @@ test.describe("Anime Provider Fixtures 归一化校验", () => {
 		expect(item?.title).toBe("葬送的芙莉莲");
 		expect(item?.status).toBe("watching");
 		expect(item?.progress).toEqual({ watched: 18, total: 28 });
-		expect(item?.link).toBe("https://bgm.tv/subject/400000");
+		expect(item?.link).toBe("https://bangumi.lat/subject/400000");
 		expect(item?.studio).toBe("MADHOUSE");
 		expect(item?.identity?.provider).toBe("bangumi");
 		expect(item?.identity?.subjectId).toBe("400000");
