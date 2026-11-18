@@ -49,6 +49,20 @@ export function sanitizeMediaUrl(url: unknown): string | undefined {
 }
 
 /**
+ * 将 Bangumi 原站链接转换到国内可访问的镜像站。
+ *
+ * bangumi.lat 是 bgm.tv 的全域名镜像，路径结构完全一致
+ * （https://bgm.tv/subject/123 -> https://bangumi.lat/subject/123）。
+ * 只替换主机名，保留路径/查询/锚点；非 bgm.tv 链接原样返回。
+ */
+function toBangumiMirror(link: string): string {
+	return link.replace(
+		/^(https?:\/\/)(?:www\.)?(bgm\.tv)(\/|$)/i,
+		"$1bangumi.lat$3",
+	);
+}
+
+/**
  * 校验并清洗外链（只允许安全的 https 链接）
  */
 export function sanitizeExternalLink(link: unknown): string | undefined {
@@ -57,11 +71,11 @@ export function sanitizeExternalLink(link: unknown): string | undefined {
 	if (!trimmed) return undefined;
 
 	if (trimmed.startsWith("http://")) {
-		return trimmed.replace(/^http:\/\//i, "https://");
+		return toBangumiMirror(trimmed.replace(/^http:\/\//i, "https://"));
 	}
 
 	if (SAFE_HTTPS_URL.test(trimmed)) {
-		return trimmed;
+		return toBangumiMirror(trimmed);
 	}
 
 	return undefined;
